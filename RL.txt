@@ -57,6 +57,53 @@ Model-free
 
 -----------
 
+EXPLORATION (find info abt env) vs EXPLOTATION (of known info to maximise reward)
+Dont want to stay in sub-optimal policy
+
+-----------
+
+Markov Decision Processes (Markov chain w arrows betw states corresponding to actions)
+Current state --- Action ---> a) Reward b) New state that we can observe
+
+Partially Observable Markov Decision Processes (e.g. poker - observations hidden)
+
+-----------
+
+Q LEARNING
+
+V numbers, state-value functions: Expected value of rewards if we start in state S. Represents how good a state is
+Q numbers, action-state-value functions: Goes step beyond. Calc expected reward depending on which action we take from state S.     Represents how good an action is if in a particular state
+
+e.g. Atari game:
+Q(s,up)
+Q(s,right)
+Q(s,left)
+etc.
+
+Choose one which has highest expected reward.
+Use as policy to act
+
+Optimal player would have optimal Q and V numbers Q*, V*
+In Q learning, we learn the Q* values
+Impractical to compute Q*
+Need to generalise, account for fact that many states are similar & have similar potential reward
+Use 'Experience Replay' - interaction (i.e. rewards + observations) to iteratively improve estimations of Q*
+
+Bellman Eqn! Use 100-e% of time, e% ignore and do something random just to explore all possible states
+i.e. 100-e % take greedy action, e % random - balance EXPLOITATION vs EXPLORATION
+
+-----------
+
+NEURAL NETWORKS
+
+Use convolutional neural networks - good for computer vision (i.e. pixels in Atari). CS231n Stanford
+Recognise relevant features from background
+Input: state, Output: state-action-value function
+
+
+
+
+
 
 
 
