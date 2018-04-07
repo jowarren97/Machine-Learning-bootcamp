@@ -1,0 +1,15 @@
+REINFORCEMENT LEARNING
+
+3 types:
+Supervised
+Unsupervised
+Reinforcement learning (RL) - good for evolving dataset i.e. interaction w environment
+
+Deep RL = Q networks + deep neural networks
+
+Reward - single scalar value e.g. +1 for chess win, -1 for loss
+Reward must be defined by environment or researcher
+What are the correct rewards? Objectives vs values
+
+Want to maximise future reward (not just short term immediate reward)
+
