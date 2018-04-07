@@ -10,12 +10,12 @@ Deep RL = Q networks + deep neural networks
 Reward - single scalar value e.g. +1 for chess win, -1 for loss
 Want to maximise cummulative reward
 Reward must be defined by environment or researcher
-What are the correct rewards? Objectives vs values
+What are the correct rewards? Subjective. Objectives (machine) vs values (human)
 
 Want to maximise future reward (not just short term immediate reward) i.e. delayed gratification
 
 Coupled system betw agent and environment
-Action -> Observation, Reward
+Action <-> Observation, Reward
 
 History is memory of observations, rewards, actions
 State enables decision making
@@ -32,17 +32,20 @@ Discount factor - necessary to consider how far in future we want to look (rewar
 
 RL agent may/may not have 3 features:
 
-Policy - behaviour
+Policy:
+Behaviour
 Function maps state to action
 Can be deterministic i.e. if state i do action j
 Can be stochastic i.e. proby of action j given state i
 Stationary as time independent, depends only on current state
 Number of actions can be either finite (e.g. up, down, left, right in atari game) or infinite (e.g. robot arm position)
 
-Value function - prediction of future reward
+Value function:
+Prediction of future reward
 Use to select action
 
-Model - predicts not just of reward but also next state
+Model:
+Predicts not just reward but also next state
 
 -----------
 
@@ -63,7 +66,7 @@ Dont want to stay in sub-optimal policy
 -----------
 
 Markov Decision Processes (Markov chain w arrows betw states corresponding to actions)
-Current state --- Action ---> a) Reward b) New state that we can observe
+Current state --- (Action) ---> a) Reward b) New state that we can observe
 
 Partially Observable Markov Decision Processes (e.g. poker - observations hidden)
 
@@ -71,21 +74,24 @@ Partially Observable Markov Decision Processes (e.g. poker - observations hidden
 
 Q LEARNING
 
-V numbers, state-value functions: Expected value of rewards if we start in state S. Represents how good a state is
-Q numbers, action-state-value functions: Goes step beyond. Calc expected reward depending on which action we take from state S.     Represents how good an action is if in a particular state
+V numbers, state-value functions: 
+Expected value of rewards if we start in state S. Represents how good a state is
+
+Q numbers, action-state-value functions: 
+Goes step beyond. Calc expected reward depending on which action we take from state S. Represents how good an action is if in a particular state
 
 e.g. Atari game:
-Q(s,up)
+Q(s,up) = expected reward if we choose 'up' when in state s
 Q(s,right)
 Q(s,left)
 etc.
 
-Choose one which has highest expected reward.
+Choose action which has highest Q value i.e. expected reward.
 Use as policy to act
 
 Optimal player would have optimal Q and V numbers Q*, V*
-In Q learning, we learn the Q* values
-Impractical to compute Q*
+In Q learning, we iteratively learn the Q* values
+Impractical to compute Q* numerically - too many permutations
 Need to generalise, account for fact that many states are similar & have similar potential reward
 Use 'Experience Replay' - interaction (i.e. rewards + observations) to iteratively improve estimations of Q*
 
