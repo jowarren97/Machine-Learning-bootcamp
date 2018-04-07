@@ -8,8 +8,59 @@ Reinforcement learning (RL) - good for evolving dataset i.e. interaction w envir
 Deep RL = Q networks + deep neural networks
 
 Reward - single scalar value e.g. +1 for chess win, -1 for loss
+Want to maximise cummulative reward
 Reward must be defined by environment or researcher
 What are the correct rewards? Objectives vs values
 
-Want to maximise future reward (not just short term immediate reward)
+Want to maximise future reward (not just short term immediate reward) i.e. delayed gratification
+
+Coupled system betw agent and environment
+Action -> Observation, Reward
+
+History is memory of observations, rewards, actions
+State enables decision making
+State is a function of history
+
+Markov
+S(t+1) depends only on S(t), indep of past states
+i.e. all history contained in current state 
+Memory stored in weights of neural network (like Neurodynamics, attractor environments)
+
+Discount factor - necessary to consider how far in future we want to look (rewards might make an infinite sum if we consider all)
+
+-----------
+
+RL agent may/may not have 3 features:
+
+Policy - behaviour
+Function maps state to action
+Can be deterministic i.e. if state i do action j
+Can be stochastic i.e. proby of action j given state i
+Stationary as time independent, depends only on current state
+Number of actions can be either finite (e.g. up, down, left, right in atari game) or infinite (e.g. robot arm position)
+
+Value function - prediction of future reward
+Use to select action
+
+Model - predicts not just of reward but also next state
+
+-----------
+
+RL Classifications:
+
+Policy-based
+Value-based*
+Policy & Value-based (Actor-Critic)
+
+Model-based
+Model-free
+
+-----------
+
+
+
+
+
+
+
 
